@@ -8,13 +8,7 @@
       <p>Copyright  © <?php echo date("Y"); ?></p>
     </div>
     <div class="col-md-6 col-md-offset-4 footer-nav">
-      <ul>
-        <li><a href="">Услуги</a></li>
-        <li><a href="">Кейсы</a></li>
-        <li><a href="">Отзывы</a></li>
-        <li><a href="">Полезное</a></li>
-        <li><a href="">Обо мне</a></li>
-      </ul>
+      <?php wpeFootNav(); ?>
     </div>
     <a href="#top" class="gototop"></a>
   </div>

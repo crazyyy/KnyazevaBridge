@@ -190,6 +190,51 @@ header {
     }
   }
 }
+.single-title {
+  @extend .titler;
+}
+
+.page-title {
+  text-align: center;
+
+  @extend .titler;
+}
+
+.cat-title {
+  text-align: center;
+
+  @extend .titler;
+}
+
+.inner-title {
+  a {
+    color: $gray;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  span {
+    position: relative;
+    &:before,
+    &:after {
+      position: absolute;
+      top: 18px;
+
+      width: 250px;
+      height: 1px;
+
+      background-color: $gray;
+
+      @extend .dblock;
+    }
+    &:before {
+      left: -270px;
+    }
+    &:after {
+      right: -270px;
+    }
+  }
+}
 
 section {
   padding: 0 0 $footer;
@@ -575,8 +620,126 @@ footer {
             color: $red;
           }
         }
+        &.current-menu-item {
+          a {
+            color: $red;
+          }
+        }
       }
     }
+  }
+}
+.row-main-content {
+  padding: 50px 0 0;
+}
+.widget {
+  margin: 0 0 50px;
+}
+.widget-social {
+  ul {
+    display: block;
+
+    margin: 0;
+    padding: 15px 0 10px;
+
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+
+    @extend .clearfix;
+    li {
+      display: inline-block;
+      float: left;
+
+      width: 25%;
+      margin: 0;
+      padding: 0;
+
+      text-align: center;
+      a {
+        display: inline-block;
+      }
+      &.ico-socwid-fb {
+        a {
+          @include sprite($sprite-ico-socwid-fb);
+        }
+      }
+      &.ico-socwid-tw {
+        a {
+          @include sprite($sprite-ico-socwid-tw);
+        }
+      }
+      &.ico-socwid-gp {
+        a {
+          @include sprite($sprite-ico-socwid-gp);
+        }
+      }
+      &.ico-socwid-em {
+        a {
+          @include sprite($sprite-ico-socwid-em);
+        }
+      }
+    }
+  }
+}
+.looper {
+  margin: 0 0 15px;
+  padding: 0 0 15px;
+
+  opacity: .8;
+  border-bottom: 2px solid $gray;
+
+  @extend .clearfix;
+  &:hover {
+    opacity: 1;
+  }
+  .feature-img {
+    display: block;
+
+    width: 100%;
+    margin: 0 0 25px;
+    img {
+      width: 100%;
+    }
+  }
+  .cat-in {
+    font-size: em(12, 16);
+    font-weight: bold;
+
+    margin: 0 0 25px;
+
+    text-transform: uppercase;
+
+    color: $gray;
+    a {
+      padding-bottom: 3px;
+
+      text-decoration: none;
+
+      color: $gray;
+      border-bottom: 1px solid $gray;
+    }
+  }
+  .inner-title {
+    font-size: em(28, 16);
+    font-weight: normal;
+
+    margin: 0 0 20px;
+
+    color: $gray;
+  }
+  p {
+    font-size: em(14, 16);
+    line-height: 2;
+  }
+  .view-article {
+    display: block;
+  }
+}
+.pagination {
+  text-align: center;
+  a,
+  span {
+    margin: 0 5px;
   }
 }
 

@@ -9,13 +9,14 @@
 @import 'import/wordpress.scss';
 @import 'sprite';
 @import 'font_fontawesome';
+@import 'font_ubuntu';
 @import 'font_opensans';
 @import 'font_roboto';
 
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
-  font-weight: normal;
+  font-weight: 300;
   line-height: $base-line-height;
 
   color: $base-font-color;
@@ -79,6 +80,20 @@ picture {
 
   @extend .clearfix;
 }
+.titler {
+  font-size: em(36, 16);
+
+  text-transform: uppercase;
+
+  color: $gray;
+}
+.container {
+  position: relative;
+
+  width: 1140px;
+  padding-right: 0;
+  padding-left: 0;
+}
 .inner {
   position: relative;
 
@@ -87,28 +102,92 @@ picture {
 
   @extend .clearfix;
 }
-
+.row {
+  margin: 0;
+}
 header {
-  background-color: $light-gray;
-  .logo {
-    display: block;
+  height: 120px;
 
-    width: $width / 10;
-    img {
-      max-width: 100%;
+  background-color: $light-gray;
+  .logo,
+  .description,
+  .phone,
+  .online-order {
+    height: 120px;
+  }
+  .logo {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+  .description {
+    font-size: .875em;
+    font-style: italic;
+    line-height: 1.5;
+
+    padding: 25px 50px 0 40px;
+  }
+  .phone {
+    padding: 50px 0 0;
+
+    text-align: center;
+    a {
+      text-decoration: none;
+
+      color: $gray;
+      border-bottom: 1px dotted transparent;
+      span {
+        font-weight: bold;
+      }
+      &:hover {
+        border-color: $gray;
+      }
     }
+  }
+  .online-order {
+    padding: 40px 0 0;
   }
 }
-nav {
-  ul {
-    @extend .justify-child;
-    @extend .clearfix;
-    li {
-      display: inline-block;
+.soc-icons {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+
+    width: 23px;
+    height: 23px;
+    margin: 0 10px;
+    &:first-child {
+      margin-left: 0;
     }
-  }
-  .headnav {
-    width: $width / 5;
+    a {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+    }
+    &.soc-ico-fb {
+      a {
+        @include sprite($sprite-ico-fb);
+      }
+    }
+    &.soc-ico-tw {
+      a {
+        @include sprite($sprite-ico-tw);
+      }
+    }
+    &.soc-ico-in {
+      a {
+        @include sprite($sprite-ico-in);
+      }
+    }
+    &.soc-ico-ln {
+      a {
+        @include sprite($sprite-ico-ln);
+      }
+    }
   }
 }
 
@@ -121,6 +200,332 @@ article {
 .looper {
   @extend .clearfix;
 }
+.row-headslide {
+  height: 580px;
+
+  background-image: url(../img/bg/row-headslide.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  .container {
+    height: 100%;
+
+    background-image: url(../img/bg/row-headslide-container.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+  .quote-container {
+    padding: 70px 0 0;
+    .quote {
+      position: relative;
+
+      margin: 0 0 60px;
+      padding: 70px 60px;
+
+      color: $blue;
+      border-radius: $second-border-radius;
+      background-color: #fff;
+      /* box-shadow: $dark-box-shadow; */
+      &:before {
+        position: absolute;
+        top: 100px;
+        left: -14px;
+
+        @extend .dblock;
+        @include sprite($sprite-triangle);
+      }
+      span {
+        font-size: em(18, 16);
+        font-weight: bold;
+
+        position: relative;
+
+        margin: 0 0 12px;
+
+        color: $gray;
+      }
+    }
+  }
+  .form-container {
+    padding: 110px 0 0;
+    h4 {
+      font-size: em(22, 16);
+      font-weight: bold;
+
+      margin: 0;
+
+      color: $gray;
+    }
+    h5 {
+      font-size: em(16, 16);
+      font-weight: normal;
+
+      margin: 0 0 20px;
+    }
+  }
+}
+.row-block-second {
+  padding: 40px 0 0;
+
+  text-align: center;
+
+  background-image: url(../img/bg/row-block-second.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  h2 {
+    font-size: em(34, 16);
+
+    margin: 0 0 20px;
+
+    color: $gray;
+    span {
+      position: relative;
+
+      padding: 0 65px 5px;
+
+      border-bottom: 2px solid $red;
+      &:after {
+        position: absolute;
+        top: 5px;
+        right: 7px;
+
+        @extend .dblock;
+        @include sprite($sprite-ico-star);
+      }
+    }
+  }
+  h5 {
+    font-weight: $medium;
+
+    color: $gray;
+  }
+  .btn-order-complex {
+    position: relative;
+    top: 20px;
+  }
+}
+.row-block-third {
+  height: 508px;
+
+  background-color: #f6f8f9;
+  background-image: url(../img/bg/row-block-third.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  .blck {
+    padding: 40px 20px 0;
+
+    text-align: center;
+    h4 {
+      font-size: em(22, 16);
+      font-weight: bold;
+
+      margin-bottom: 50px;
+
+      color: $gray;
+    }
+    h5 {
+      font-size: em(18, 16);
+
+      color: $gray;
+    }
+    .btn-transparent {
+      width: 230px;
+      margin: 0 auto;
+    }
+  }
+}
+.row-fourth {
+  text-align: center;
+
+  border-top: 1px solid $blue;
+  border-bottom: 1px solid $blue;
+  .container {
+    &:first-child {
+      margin-bottom: 30px;
+      padding-top: 35px;
+    }
+  }
+  h3 {
+    @extend .titler;
+    span {
+      position: relative;
+      &:before,
+      &:after {
+        position: absolute;
+        top: 15px;
+
+        width: 380px;
+        height: 1px;
+
+        background-color: $blue;
+
+        @extend .dblock;
+      }
+      &:before {
+        left: -420px;
+      }
+      &:after {
+        right: -420px;
+      }
+    }
+  }
+  .blck {
+    padding: 0 45px;
+    ul {
+      height: 210px;
+      margin: 0 0 40px;
+      padding: 0;
+      li {
+        display: inline-block;
+
+        width: 31%;
+        height: 100%;
+        margin: 0 .8%;
+
+        border-bottom: 2px solid #000;
+        background-color: $light-gray;
+        img {
+          width: 100%;
+          height: 148px;
+
+          background-color: #7b7c7c;
+        }
+        h6 {
+          height: 62px;
+
+          @extend .align-center-parent;
+          span {
+            font-size: em(14, 16);
+
+            color: $gray;
+
+            @extend .align-center;
+          }
+        }
+      }
+    }
+  }
+  h5 {
+    font-size: em(22, 16);
+    font-weight: $medium;
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
+
+    color: $gray;
+  }
+}
+.row-five {
+  height: 540px;
+  padding-top: 45px;
+
+  background-color: #f6f8f9;
+  h3 {
+    text-align: center;
+
+    @extend .titler;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .rew-slider-first {
+    li {
+      display: inline-block;
+      overflow: hidden;
+
+      width: 100px;
+      height: 100px;
+
+      border-radius: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .rew-slider-second {
+    margin: 0 160px;
+    li {
+      line-height: 2;
+
+      text-align: center;
+      h5 {
+        font-size: em(18, 16);
+        font-weight: bold;
+      }
+      h6 {
+        font-size: em(14, 16);
+      }
+    }
+  }
+}
+.row-six {
+  height: 518px;
+
+  background-image: url(../img/bg/row-six.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  .row-six-inner {
+    position: relative;
+
+    padding: 120px 140px 0 100px;
+    &:before {
+      position: absolute;
+      top: 50px;
+      right: 177px;
+
+      @extend .dblock;
+      @include sprite($sprite-row-six);
+    }
+    h1 {
+      @extend .titler;
+    }
+    p {
+      line-height: 2;
+    }
+    .btn-transparent {
+      width: 150px;
+    }
+  }
+}
+.row-seven {
+  height: 550px;
+  padding-top: 60px;
+
+  border-top: 1px solid $blue;
+  border-bottom: 1px solid $blue;
+  background-color: #f6f8f9;
+  h1 {
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    @extend .titler;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+    }
+  }
+}
+.row-eight {
+  height: 480px;
+  padding-top: 45px;
+  h1 {
+    @extend .titler;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+}
+
 
 
 footer {
@@ -128,9 +533,7 @@ footer {
   margin: $footer_margin auto 0;
 
   background-color: $light-gray;
-  .inner {
-    height: $footer;
-  }
+
 }
 
 @import 'import/print';

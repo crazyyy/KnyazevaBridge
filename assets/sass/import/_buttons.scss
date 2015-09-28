@@ -1,4 +1,5 @@
-.button
+.btn,
+.button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'],
@@ -28,6 +29,7 @@ button {
   &:hover,
   &:focus {
     color: #fff;
+    text-decoration: none;
     background-color: darken($action-color, 15%);
   }
   &:active {
@@ -37,5 +39,26 @@ button {
     cursor: not-allowed;
 
     opacity: .5;
+  }
+}
+.btn-transparent {
+  font-family: $second-font-family;
+  font-size: 1em;
+
+  display: block;
+
+  padding: 10px 0;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: $dark-gray;
+  border: 1px solid $dark-gray;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    border-color: lighten($red, 10%);
+    background-color: $red;
+    box-shadow: $form-box-shadow-focus;
   }
 }

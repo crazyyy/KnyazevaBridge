@@ -520,20 +520,64 @@ article {
   height: 480px;
   padding-top: 45px;
   h1 {
-    @extend .titler;
-    text-align: center;
     margin-bottom: 35px;
+
+    text-align: center;
+
+    @extend .titler;
   }
 }
-
-
 
 footer {
   height: $footer;
   margin: $footer_margin auto 0;
 
-  background-color: $light-gray;
+  background-color: $gray;
+  .gototop {
+    position: absolute;
+    top: 25px;
+    right: 0;
 
+    display: block;
+
+    opacity: .8;
+
+    @include sprite($sprite-gototop);
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .copyright {
+    padding: 40px 0 0;
+    p {
+      font-size: em(14, 16);
+    }
+  }
+  .footer-nav {
+    padding: 40px 0 0;
+    ul {
+      margin: 0;
+      padding: 0;
+
+      text-align: left;
+      li {
+        display: inline-block;
+
+        margin: 0 20px 0 0;
+        padding: 0;
+        a {
+          font-size: em(14, 16);
+
+          text-decoration: none;
+
+          color: #fefeff;
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
 }
 
 @import 'import/print';

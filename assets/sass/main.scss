@@ -655,6 +655,8 @@ footer {
       padding: 0;
 
       text-align: center;
+
+      opacity: .7;
       a {
         display: inline-block;
       }
@@ -677,6 +679,9 @@ footer {
         a {
           @include sprite($sprite-ico-socwid-em);
         }
+      }
+      &:hover {
+        opacity: 1;
       }
     }
   }
